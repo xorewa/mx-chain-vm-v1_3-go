@@ -45,7 +45,7 @@ func PerformAsyncCallParentMock(instanceMock *mock.InstanceMock, config interfac
 		// data for child -> third party tx
 		callData.Str(AsyncChildData)
 		// behavior param for child
-		callData.Bytes(append(arguments[0]))
+		callData.Bytes(arguments[0])
 
 		// amount to transfer from parent to child
 		value := big.NewInt(testConfig.TransferFromParentToChild).Bytes()
@@ -178,7 +178,7 @@ func finishResult(host vmhost.VMHost, result int) {
 
 func argumentsToHexString(functionName string, args ...[]byte) []byte {
 	separator := byte('@')
-	output := append([]byte(functionName))
+	output := []byte(functionName)
 	for _, arg := range args {
 		output = append(output, separator)
 		output = append(output, hex.EncodeToString(arg)...)
