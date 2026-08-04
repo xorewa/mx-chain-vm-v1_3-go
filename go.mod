@@ -1,6 +1,6 @@
 module github.com/multiversx/mx-chain-vm-v1_3-go
 
-go 1.26
+go 1.26.2
 
 require (
 	github.com/btcsuite/btcd/btcec/v2 v2.2.0
